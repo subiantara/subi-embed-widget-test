@@ -16,20 +16,20 @@
   <section>
     <h3>1. Default snippet</h3>
     <p>Expect: up to 4 activities in the storefront currency, under the title and description set in Admin (none while those fields are empty). Cards link to the activity detail page on the storefront.</p>
-    <div data-travlr-activities data-city="hong kong" data-country="hong kong"></div>
+    <div data-travlr-activities data-city="thailand" data-country="thailand"></div>
   </section>
 
   <section>
     <h3>2. Overrides from the page</h3>
     <p>Expect: up to 8 Sydney activities in USD, the title and description below, and a carousel with arrows in the header. Card links carry <code>?currency=USD</code>.</p>
-    <div data-travlr-activities data-city="Sydney" data-country="Australia" data-currency="USD" data-limit="8"
+    <div data-travlr-activities data-city="hong kong" data-country="hong kong" data-currency="USD" data-limit="8"
          data-title="Things to do in Sydney" data-description="Hand-picked experiences around the harbour city."></div>
   </section>
 
   <section>
     <h3>3. Fallbacks</h3>
-    <p>Expect: <code>GBP</code> is not sold, so prices fall back to the storefront currency. <code>data-limit="99"</code> caps at 12. The empty <code>data-title</code> and <code>data-description</code> hide the heading.</p>
-    <div data-travlr-activities data-city="Bangkok" data-country="Thailand" data-currency="GBP" data-limit="99" data-title="" data-description=""></div>
+    <p>Expect: <code>IDR</code> is not sold, so prices fall back to the storefront currency. <code>data-limit="99"</code> caps at 12. The empty <code>data-title</code> and <code>data-description</code> hide the heading.</p>
+    <div data-travlr-activities data-city="thailand" data-country="thailand" data-currency="IDR" data-limit="99" data-title="" data-description=""></div>
   </section>
 
   <section>
