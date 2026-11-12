@@ -49,7 +49,7 @@
     document.querySelectorAll('[data-travlr-activities]').forEach(slot => {
       const pre = document.createElement('pre');
       pre.className = 'embed-code';
-      pre.innerHTML = esc(slot.outerHTML.replace(/\s+/g, ' '));
+      pre.innerHTML = esc(slot.outerHTML.replace(/\s+/g, ' ').replace('data-travlr-activities=""', 'data-travlr-activities'));
       slot.before(pre);
     });
   </script>
