@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Subi embed widget test</title>
-  <style>body{font-family:system-ui,sans-serif;max-width:960px;margin:2rem auto;padding:0 16px;line-height:1.5}code{background:#f3f4f6;padding:0 4px;border-radius:4px}section{margin:2.5rem 0}</style>
+  <style>body{font-family:system-ui,sans-serif;max-width:960px;margin:2rem auto;padding:0 16px;line-height:1.5}code{background:#f3f4f6;padding:0 4px;border-radius:4px}section{margin:2.5rem 0}pre.embed-code{background:#0f172a;color:#e2e8f0;padding:12px 14px;border-radius:8px;overflow-x:auto;white-space:pre-wrap;word-break:break-all;font-size:13px}</style>
 </head>
 <body>
   <h1>Staging tests</h1>
@@ -16,7 +16,7 @@
   <section>
     <h3>1. Default snippet</h3>
     <p>Expect: up to 4 activities in the storefront currency, under the title and description set in Admin (none while those fields are empty). Cards link to the activity detail page on the storefront.</p>
-    <div data-travlr-activities data-city="thailand" data-country="thailand" data-currency="AUD" data-limit="4">
+    <div data-travlr-activities data-city="thailand" data-country="thailand" data-currency="AUD" data-limit="4"></div>
   </section>
 
   <section>
@@ -38,6 +38,21 @@
     <div data-travlr-activities data-city="Nowhereville" data-country="Atlantis"></div>
   </section>
 
+  <section>
+    <h3>Loader script (paste once per page)</h3>
+    <pre class="embed-code">&lt;script async src="https://static.freya.travlr.com/widgets/loader.js" data-key="***"&gt;&lt;/script&gt;</pre>
+  </section>
+
+  <script>
+    // Shows each slot's own HTML just above it, read before the loader fills the slot.
+    const esc = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    document.querySelectorAll('[data-travlr-activities]').forEach(slot => {
+      const pre = document.createElement('pre');
+      pre.className = 'embed-code';
+      pre.innerHTML = esc(slot.outerHTML.replace(/\s+/g, ' ').replace('data-travlr-activities=""', 'data-travlr-activities'));
+      slot.before(pre);
+    });
+  </script>
   <script async src="https://static.freya.travlr.com/widgets/loader.js" data-key="tvl_pk_2Kvuu3HcXO98i7BAaVLjX"></script>
 </body>
 </html>
