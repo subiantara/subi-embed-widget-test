@@ -10,18 +10,15 @@
   <h1>Production tests</h1>
   <p>Production, embedded with no iframe. Loader: <code>https://static.travlr.com/widgets/loader.js</code>. All slots on this page share one loader. <a href="./">Back to the main test page</a></p>
 
-  <section>
-    <h2>OTA search widget</h2>
-    <div data-travlr-ota></div>
-  </section>
-
   <h2>Activities widget</h2>
   <p>The list only shows when <b>Embeddable widgets → Activities list</b> is switched on for the storefront in production Platform.Admin.</p>
 
   <section>
     <h3>1. Default snippet</h3>
-    <p>Expect: up to 4 Ubud activities in the storefront currency, under the title and description set in Admin (none while those fields are empty). Cards link to the activity detail page on the storefront.</p>
-    <div data-travlr-activities data-city="Ubud" data-country="Indonesia"></div>
+    <p>Expect: up to 4 Bangkok activities in the storefront currency, under the title and description set in Admin (none while those fields are empty). Cards link to the activity detail page on the storefront.</p>
+    <div data-travlr-activities data-city="Bangkok" data-country="Thailand" data-currency="GBP" data-limit="4"></div>
+    <p>"<div data-travlr-activities data-city="Bangkok" data-country="Thailand" data-currency="GBP" data-limit="4"></div>
+<script async src="https://static.travlr.com/widgets/loader.js" data-key="***"></script>"</p>
   </section>
 
   <section>
@@ -43,6 +40,6 @@
     <div data-travlr-activities data-city="Nowhereville" data-country="Atlantis"></div>
   </section>
 
-  <script async src="https://static.travlr.com/widgets/loader.js" data-key="tvl_pk_2drfMwfNW8x6rZ8lQlGap"></script>
+  <script async src="https://static.travlr.com/widgets/loader.js" data-key="tvl_pk_9K6SzMh0CJdZhgeNE3sMz"></script>
 </body>
 </html>
